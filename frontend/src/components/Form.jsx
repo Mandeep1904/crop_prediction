@@ -25,7 +25,7 @@ const Form = () => {
     try {
       // Making the POST request using Axios
       const response = await axios.post(
-        `${import.meta.env.FLASK_API_URL || 'http://127.0.0.1:5000/api/predict'}`,
+        `${import.meta.env.FLASK_API_URL}`,
         formData, // Passing the form data as the body
         {
           headers: {
