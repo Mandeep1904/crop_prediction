@@ -15,13 +15,13 @@ FRONTEND_URL = os.getenv('FRONTEND_URL')
 app = Flask(__name__)
 from flask_cors import CORS
 
-CORS(app, origins=['http://localhost:3000', FRONTEND_URL])
+# CORS(app, origins=['http://localhost:3000', FRONTEND_URL])
+CORS(app)
 
 model = pickle.load(open("model.pkl", "rb"))
 
 @app.route("/")
 def Home():
-    # Retains the original EJS-based form rendering for compatibility
     return render_template("index.ejs")
 
 # @app.route("/predict", methods=["POST"])

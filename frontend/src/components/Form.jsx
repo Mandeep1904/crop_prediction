@@ -25,7 +25,7 @@ const Form = () => {
     try {
       // Making the POST request using Axios
       const response = await axios.post(
-        `${import.meta.env.FLASK_API_URL}`,
+        `${import.meta.env.FLASK_API_URL||  'http://127.0.0.1:5000/api/predict'}`,
         formData, // Passing the form data as the body
         {
           headers: {
@@ -33,6 +33,8 @@ const Form = () => {
           },
         }
       );
+
+      console.log(response);
 
       // Extracting prediction from the response
       if (response.data && response.data.prediction) {
