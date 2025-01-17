@@ -20,9 +20,9 @@ CORS(app)
 
 model = pickle.load(open("model.pkl", "rb"))
 
-@app.route("/")
-def Home():
-    return render_template("index.ejs")
+# @app.route("/")
+# def Home():
+#     return render_template("index.ejs")
 
 # @app.route("/predict", methods=["POST"])
 # def predict():
