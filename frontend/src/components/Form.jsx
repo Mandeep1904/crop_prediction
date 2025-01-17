@@ -32,20 +32,18 @@ const Form = () => {
       rainfall: "",
     });
     try {
-      // Making the POST request using Axios
       const response = await axios.post(
         `${import.meta.env.FLASK_API_URL}`,
-        formData, // Passing the form data as the body
+        formData,
         {
           headers: {
-            "Content-Type": "application/json", // Setting JSON headers
+            "Content-Type": "application/json",
           },
         }
       );
 
       console.log(response);
 
-      // Extracting prediction from the response
       if (response.data && response.data.prediction) {
         setPrediction(response.data.prediction);
       } else {
