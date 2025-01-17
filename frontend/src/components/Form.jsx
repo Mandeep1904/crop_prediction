@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 
 const Form = () => {
-  
   const [formData, setFormData] = useState({
     Nitrogen: "",
     Phosphorus: "",
@@ -33,7 +32,7 @@ const Form = () => {
     });
     try {
       const response = await axios.post(
-        `${import.meta.env.FLASK_API_URL}`,
+        `${import.meta.env.VITE_FLASK_API_URL}`,
         formData,
         {
           headers: {
@@ -43,6 +42,8 @@ const Form = () => {
       );
 
       console.log(response);
+      console.log(response.data);
+      console.log(response.data.prediction);
 
       if (response.data && response.data.prediction) {
         setPrediction(response.data.prediction);
