@@ -1,8 +1,8 @@
-import numpy as np
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
-import pickle
 from dotenv import load_dotenv
+import numpy as np
+import pickle
 import os
 
 # Load environment variables
@@ -15,8 +15,8 @@ FRONTEND_URL = os.getenv('FRONTEND_URL')
 app = Flask(__name__)
 from flask_cors import CORS
 
-# CORS(app, origins=['http://localhost:5173', FRONTEND_URL])
 CORS(app)
+# CORS(app, origins=['http://localhost:5173', FRONTEND_URL])
 
 model = pickle.load(open("model.pkl", "rb"))
 
