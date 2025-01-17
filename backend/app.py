@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import pickle
 from dotenv import load_dotenv
+import os
 
 # Load environment variables
 load_dotenv()
