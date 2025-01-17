@@ -2,6 +2,10 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import pickle
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Create flask app
 app = Flask(__name__)
