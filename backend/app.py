@@ -15,8 +15,8 @@ FRONTEND_URL = os.getenv('FRONTEND_URL')
 app = Flask(__name__)
 from flask_cors import CORS
 
-CORS(app)
-# CORS(app, origins=['http://localhost:5173', FRONTEND_URL])
+# CORS(app)
+CORS(app, origins=['http://localhost:5173', FRONTEND_URL])
 
 model = pickle.load(open("model.pkl", "rb"))
 
